@@ -1,3 +1,9 @@
+
+/*
+ * Copyright (c) 2019. University of Applied Sciences and Arts Northwestern Switzerland FHNW.
+ * All rights reserved.
+ */
+
 package rocks.process.acrm.config;
 
 import com.google.common.base.Predicates;

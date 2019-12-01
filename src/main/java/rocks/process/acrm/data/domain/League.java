@@ -16,10 +16,43 @@ public class League {
     @GeneratedValue
     private Long id;
     private String leaguename;
-    @OneToMany
-    private List<Team> teams;
-    @OneToMany
-    private List<Match> league;
+
+    @OneToMany(mappedBy = "league")
+    private List<Team> allTeams;
 
 
+    @OneToMany(mappedBy = "league")
+    private List<Match> allPlayedMatches;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getLeaguename() {
+        return leaguename;
+    }
+
+    public void setLeaguename(String leaguename) {
+        this.leaguename = leaguename;
+    }
+
+    public List<Team> getAllTeams() {
+        return allTeams;
+    }
+
+    public void setAllTeams(List<Team> allTeams) {
+        this.allTeams = allTeams;
+    }
+
+    public List<Match> getAllPlayedMatches() {
+        return allPlayedMatches;
+    }
+
+    public void setAllPlayedMatches(List<Match> allPlayedMatches) {
+        this.allPlayedMatches = allPlayedMatches;
+    }
 }
