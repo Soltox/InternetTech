@@ -10,5 +10,7 @@ import rocks.process.acrm.data.domain.League;
 
 public interface LeagueRepository extends JpaRepository<League, Long> {
 
+    League findByLeaguename(String leaguename);
+
 
 }
