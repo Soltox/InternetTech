@@ -15,8 +15,9 @@ public class Player {
     private String name;
     private Position position;
     private int scoredgoals;
+
+
     @ManyToOne
-    @JsonBackReference
     private Team team;
 
     public Long getId() {
@@ -49,5 +50,13 @@ public class Player {
 
     public void setScoredgoals(int scoredgoals) {
         this.scoredgoals = scoredgoals;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }

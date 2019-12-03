@@ -1,9 +1,6 @@
 package rocks.process.acrm.data.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,12 +14,13 @@ public class League {
     private Long id;
     private String leaguename;
 
-    @OneToMany(mappedBy = "league")
-    private List<Team> allTeams;
 
 
     @OneToMany(mappedBy = "league")
     private List<Match> allPlayedMatches;
+
+    @OneToMany(mappedBy = "league")
+    List<Team> allTeams;
 
     public Long getId() {
         return id;

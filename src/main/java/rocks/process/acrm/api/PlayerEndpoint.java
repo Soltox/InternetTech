@@ -23,12 +23,12 @@ public class PlayerEndpoint {
 
 
     @PostMapping(path = "/player", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Player> postPlayer(@RequestBody Player player) {
+    public Player postPlayer(@RequestBody Player player) {
         try {
 
-            playerService.createPlayer();
+            playerService.createPlayer(player);
 
-            player = null;
+
 
         } catch (ConstraintViolationException e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getConstraintViolations().iterator().next().getMessage());
@@ -36,13 +36,33 @@ public class PlayerEndpoint {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
         }
 
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest().path("/{customerId}")
-                .buildAndExpand(player.getId()).toUri();
 
-        return ResponseEntity.created(location).body(player);
+
+        return player;
 
     }
+
+
+    @PutMapping(path = "/player/{playerId}/{teamId}", consumes = "application/json", produces = "application/json")
+    public Player putPlayer(@PathVariable(value = "playerId")String playerId,@PathVariable(value = "teamId")String teamId) {
+        Player player = null;
+        try {
+
+            player = playerService.addTeamToPlayer(Long.parseLong(playerId),Long.parseLong(teamId));
+
+
+
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+
+
+
+        return player;
+
+    }
+
+
 
 
 }

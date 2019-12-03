@@ -10,5 +10,7 @@ import rocks.process.acrm.data.domain.Player;
 
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
+Player findOnePlayerById(long id);
+
 
 }

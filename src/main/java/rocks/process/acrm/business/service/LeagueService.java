@@ -25,7 +25,6 @@ public class LeagueService {
         League league = new League();
         league.setLeaguename(transmittedLeague.getLeaguename());
         leagueRepository.save(league);
-        System.out.println(leagueRepository.findByLeaguename("string"));
         return league;
     }
 
