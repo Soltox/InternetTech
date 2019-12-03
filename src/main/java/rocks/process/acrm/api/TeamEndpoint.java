@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import rocks.process.acrm.business.service.LeagueService;
+import rocks.process.acrm.business.service.TeamService;
 import rocks.process.acrm.data.domain.League;
+import rocks.process.acrm.data.domain.Team;
 import rocks.process.acrm.data.repository.LeagueRepository;
 
 
@@ -16,19 +18,18 @@ import java.net.URI;
 
 @RestController
 @RequestMapping(path = "/api")
-public class LeagueEndpoint {
+public class TeamEndpoint {
 
     @Autowired
-    private LeagueService leagueService;
+    private TeamService teamService;
 
 
-    @PostMapping(path = "/league", consumes = "application/json", produces = "application/json")
-    public League postLeague(@RequestBody League league) {
+    @PostMapping(path = "/team", consumes = "application/json", produces = "application/json")
+    public Team postTeam(@RequestBody Team team) {
 
         try {
 
-            league = leagueService.createLeague(league);
-
+            team = teamService.createTeam(team);
 
 
         } catch (ConstraintViolationException e) {
@@ -37,14 +38,8 @@ public class LeagueEndpoint {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
         }
 
-        /*URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest().path("/{leagueId}")
-                .buildAndExpand(league.getId()).toUri();
 
-        return ResponseEntity.created(location).body(league);*/
-
-
-        return league;
+        return team;
     }
 
 
