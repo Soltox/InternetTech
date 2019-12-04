@@ -38,5 +38,20 @@ public class TeamService {
         return team;
     }
 
+    public int calcAllGoals(Long teamId) {
+
+        Team team = teamRepository.findOneTeamById(teamId);
+        int allGoals = 0;
+
+
+        for (int i = 0; i < team.getPlayer().size(); i++) {
+
+            allGoals = allGoals + team.getPlayer().get(i).getScoredgoals();
+        }
+
+
+        return allGoals;
+    }
+
 
 }

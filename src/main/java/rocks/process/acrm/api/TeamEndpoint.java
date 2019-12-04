@@ -9,6 +9,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import rocks.process.acrm.business.service.LeagueService;
 import rocks.process.acrm.business.service.TeamService;
 import rocks.process.acrm.data.domain.League;
+import rocks.process.acrm.data.domain.Player;
 import rocks.process.acrm.data.domain.Team;
 import rocks.process.acrm.data.repository.LeagueRepository;
 
@@ -41,6 +42,26 @@ public class TeamEndpoint {
 
         return team;
     }
+
+    @GetMapping(path = "/team/{teamId}", consumes = "application/json", produces = "application/json")
+    public int calcTeamGoals(@PathVariable(value = "teamId") Long teamId) {
+        int allgoals;
+
+        try {
+
+
+            allgoals = teamService.calcAllGoals(teamId);
+
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+
+
+        return allgoals;
+
+    }
+
+
 
 
 }
