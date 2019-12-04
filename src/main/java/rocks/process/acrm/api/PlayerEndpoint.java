@@ -42,6 +42,25 @@ public class PlayerEndpoint {
 
     }
 
+    @GetMapping(path = "/player/{playerId}", consumes = "application/json", produces = "application/json")
+    public Player getPlayer(@PathVariable(value = "playerId")Long playerId) {
+        Player player = null;
+        try {
+
+            player = playerService.findPlayer(playerId);
+
+
+
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+
+
+
+        return player;
+
+    }
+
 
     @PutMapping(path = "/player/{playerId}/{teamId}", consumes = "application/json", produces = "application/json")
     public Player putPlayer(@PathVariable(value = "playerId")String playerId,@PathVariable(value = "teamId")String teamId) {

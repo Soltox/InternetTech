@@ -58,6 +58,13 @@ public class PlayerService {
 
     }
 
+    public Player findPlayer(long playerId){
+
+        Player player = playerRepository.findOnePlayerById(playerId);
+
+        return player;
+    }
+
 
 
 
