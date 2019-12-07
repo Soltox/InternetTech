@@ -14,6 +14,7 @@ This is a documentation about the bonus project of the module Internet Technolog
   - [Business Layer](#business-layer)
   - [Service Layer / API](#service-layer--api)
 - [Deployment](#deployment)
+- [Review](#review)
 
 ## Analysis
 
@@ -122,3 +123,6 @@ web: java -Dserver.port=$PORT $JAVA_OPTS -jar /target/*.jar
 ```
 
 Finally the Swagger-UI can be access using the Heroku app specific address such as: `https://***.herokuapp.com/swagger-ui.html`
+
+## Review
+The project was very interesting for me. I always wanted to know, how business applications "talk" to each other and this project gave me the insight how they are. I spent quite an amount of time to program everything and write the documentation, but it was still worth it, because I really learned something completely new, it will give me bonus points and it's already a preparation to the exam. As this part of the module was very practical I could connect the theory we had to the programming I did.
