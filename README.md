@@ -103,7 +103,7 @@ The `rocks.process.acrm.data.domain` package contains the following domain objec
 
 The `rocks.process.acrm.business.service` package contains classes of the following business services:
 
-![](images/business-service.png)
+![](images/BusinessService.jpg)
 
 
 ### Service Layer / API
