@@ -22,8 +22,8 @@ This is a documentation about the bonus project of the module Internet Technolog
 A little football association kept track of their leagues on an Excel Sheet. This led to inconsistency in the data. Neither was it possible to communicate to different football associations digitally, which is a requirement for participating in bigger tournaments. A solution is wished, where the different services can be accessed via different interfaces and which is accessible and consistent all the time.
 
 ### Use Case
-![](images/A-CRM-Use-Case.png)
-- UC-1 [Login on A-CRM]: Agents can log-in by entering an email address and password. As an extension, new agents my register first.
+![](images/Football.jpg)
+- UC01 [Login on A-CRM]: Agents can log-in by entering an email address and password. As an extension, new agents my register first.
 - UC-2 [Register on A-CRM]: Agents can register to get an account (profile) to access the A-CRM system.
 - UC-3 [Edit a customer]: Agents can create, update and delete customers.
 - UC-4 [Show a customer list]: Agents can get an overview over their customers based on a customer list. As an extension they can create, update and delete customers (UC-3).
