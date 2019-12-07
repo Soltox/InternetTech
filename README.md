@@ -117,12 +117,12 @@ Further can be seen using the Swagger-UI.
 
 ## Deployment
 
-This spring boot application can be deployed to Heroku by adding the following `Procfile` to the project root:
+This spring boot application was deployed to Heroku and has the following URL:
 ```console
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar /target/*.jar
+web: https://polar-island-87141.herokuapp.com/
 ```
 
-Finally the Swagger-UI can be access using the Heroku app specific address such as: `https://***.herokuapp.com/swagger-ui.html`
+Finally the Swagger-UI can be accessed using: `https://polar-island-87141.herokuapp.com/swagger-ui.html`
 
 ## Review
 The project was very interesting for me. I always wanted to know, how business applications "talk" to each other and this project gave me the insight how they are. I spent quite an amount of time to program everything and write the documentation, but it was still worth it, because I really learned something completely new, it will give me bonus points and it's already a preparation to the exam. As this part of the module was very practical I could connect the theory we had to the programming I did.
