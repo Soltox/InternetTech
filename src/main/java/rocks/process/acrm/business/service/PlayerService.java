@@ -52,11 +52,21 @@ public class PlayerService {
         playerRepository.save(player);
         teamRepository.save(team);
 
+
         return player;
 
 
 
     }
+
+
+    public void deletePlayer(long playerID){
+
+        playerRepository.delete(playerRepository.findOnePlayerById(playerID));
+
+    }
+
+
 
     public Player findPlayer(long playerId){
 

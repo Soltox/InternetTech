@@ -42,7 +42,25 @@ public class PlayerEndpoint {
 
     }
 
-    @GetMapping(path = "/player/{playerId}", consumes = "application/json", produces = "application/json")
+    @DeleteMapping(path = "/player/{playerId}", consumes = "application/json", produces = "application/json")
+    public void deletePlayer(@PathVariable(value = "playerId")Long playerId) {
+
+        try {
+
+            playerService.deletePlayer(playerId);
+
+
+
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT, e.getMessage());
+        }
+
+
+    }
+
+
+
+    @GetMapping(path = "/player/delete/{playerId}", consumes = "application/json", produces = "application/json")
     public Player getPlayer(@PathVariable(value = "playerId")Long playerId) {
         Player player = null;
         try {

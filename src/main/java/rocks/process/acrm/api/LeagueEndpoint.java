@@ -8,6 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import rocks.process.acrm.business.service.LeagueService;
 import rocks.process.acrm.data.domain.League;
+import rocks.process.acrm.data.domain.Player;
 import rocks.process.acrm.data.repository.LeagueRepository;
 
 
@@ -37,14 +38,27 @@ public class LeagueEndpoint {
             throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
         }
 
-        /*URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest().path("/{leagueId}")
-                .buildAndExpand(league.getId()).toUri();
-
-        return ResponseEntity.created(location).body(league);*/
-
 
         return league;
+    }
+
+    @PostMapping(path = "/league/topscorer/{leagueId}", consumes = "application/json", produces = "application/json")
+    public Player findTop(@PathVariable(value = "leagueId")Long leagueId) {
+        Player player = null;
+        try {
+
+            player = leagueService.findTopScorer(leagueId);
+
+
+
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
+        }
+
+
+
+        return player;
+
     }
 
 
