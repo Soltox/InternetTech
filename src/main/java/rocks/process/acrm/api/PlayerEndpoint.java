@@ -42,7 +42,7 @@ public class PlayerEndpoint {
 
     }
 
-    @DeleteMapping(path = "/player/{playerId}", consumes = "application/json", produces = "application/json")
+    @DeleteMapping(path = "/player/delete/{playerId}", consumes = "application/json", produces = "application/json")
     public void deletePlayer(@PathVariable(value = "playerId")Long playerId) {
 
         try {
@@ -60,7 +60,7 @@ public class PlayerEndpoint {
 
 
 
-    @GetMapping(path = "/player/delete/{playerId}", consumes = "application/json", produces = "application/json")
+    @GetMapping(path = "/player/{playerId}", consumes = "application/json", produces = "application/json")
     public Player getPlayer(@PathVariable(value = "playerId")Long playerId) {
         Player player = null;
         try {
