@@ -23,15 +23,21 @@ A little football association kept track of their leagues on an Excel Sheet. Thi
 
 ### Use Case
 ![](images/Football.jpg)
-- UC01 [Login on A-CRM]: Agents can log-in by entering an email address and password. As an extension, new agents my register first.
-- UC-2 [Register on A-CRM]: Agents can register to get an account (profile) to access the A-CRM system.
-- UC-3 [Edit a customer]: Agents can create, update and delete customers.
-- UC-4 [Show a customer list]: Agents can get an overview over their customers based on a customer list. As an extension they can create, update and delete customers (UC-3).
+
+Note: Simple create Use Cases are omitted.
+
+- UC01 [Transfer player to another team]: A player can be added to a team in case of debut or transfer. 
+- UC02 [Delete a player]: When a player retires or has a serious injury the user can delete him from the association.
+- UC03 [Calculate all goals from a team]: To determine the league winner, the user can calculate all the goals which the team scored.
+- UC04 [Find topscorer in league]: The user can find the topscorer in a league.
 
 ## Design
 
 ### Endpoint Prototype
-**Path**: [`/api/customer`](/api/customer) 
+
+Note: This serves as a reference/prototype. All other endpoints are omitted and can be accessed using swagger.
+
+**Path**: [`/api/player`](/api/customer) 
 
 **Method:** `POST`
 
@@ -39,43 +45,48 @@ A little football association kept track of their leagues on an Excel Sheet. Thi
 
 ```JSON
 {
-  "agent": {
-    "customers": [
-      null
-    ],
-    "email": "string",
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "remember": "string"
-  },
-  "email": "string",
   "id": 0,
-  "mobile": "string",
-  "name": "string"
+  "name": "string",
+  "position": "GOALKEEPER",
+  "scoredgoals": 0,
+  "team": {
+    "id": 0,
+    "league": {
+      "allPlayedMatches": [
+        {}
+      ],
+      "allTeams": [
+        null
+      ],
+      "id": 0,
+      "leaguename": "string"
+    },
+    "teamname": "string"
+  }
 }
-```
-
-• *Optional:* `...`
   
 **Success Response**  • *Code:* `200 OK` • *Sample Body:*
 
 ```JSON
 {
-  "agent": {
-    "customers": [
-      null
-    ],
-    "email": "string",
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "remember": "string"
-  },
-  "email": "string",
   "id": 0,
-  "mobile": "string",
-  "name": "string"
+  "name": "string",
+  "position": "GOALKEEPER",
+  "scoredgoals": 0,
+  "team": {
+    "id": 0,
+    "league": {
+      "allPlayedMatches": [
+        {}
+      ],
+      "allTeams": [
+        null
+      ],
+      "id": 0,
+      "leaguename": "string"
+    },
+    "teamname": "string"
+  }
 }
 ```
 
