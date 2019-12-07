@@ -38,7 +38,7 @@ Note: Simple create Use Cases are omitted.
 
 Note: This serves as a reference/prototype. All other endpoints are omitted and can be accessed using swagger.
 
-**Path**: [`/api/player`](/api/customer) 
+**Path**: [`https://polar-island-87141.herokuapp.com/api/player`](/api/customer) 
 
 **Method:** `POST`
 
