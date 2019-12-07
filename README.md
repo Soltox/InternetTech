@@ -96,11 +96,8 @@ Note: This serves as a reference/prototype. All other endpoints are omitted and 
 
 The `rocks.process.acrm.data.domain` package contains the following domain objects / entities including getters and setters:
 
-![](images/A-CRM-Domain-Model.png)
+![](images/DataDomain.jpg)
 
-This would be the ERD representation of the domain model:
-
-![](images/A-CRM-ERD.png)
 
 ### Business Layer
 
